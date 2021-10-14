@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 
 # In[3]:
 
-seed = 333
+seed = 783
 
 USE_CUDA = torch.cuda.is_available()
 Variable = lambda *args, **kwargs: autograd.Variable(*args, **kwargs).cuda() if USE_CUDA else autograd.Variable(*args, **kwargs)
@@ -151,12 +151,14 @@ from common.wrappers import make_atari, wrap_deepmind, wrap_pytorch
 # In[18]:
 
 
-env_id = "PongNoFrameskip-v4"
+env_id = "FreewayNoFrameskip-v4"
 env    = make_atari(env_id)
 env    = wrap_deepmind(env)
 env    = wrap_pytorch(env)
 env.seed(seed)
 env.action_space.seed(seed)
+env.observation_space.seed(seed)
+
 # In[36]:
 T = env.observation_space.shape[0]
 print("The number of time steps = ", T)
