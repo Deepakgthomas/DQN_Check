@@ -151,7 +151,7 @@ from common.wrappers import make_atari, wrap_deepmind, wrap_pytorch
 # In[18]:
 
 
-env_id = "FreewayNoFrameskip-v4"
+env_id = "RiverraidNoFrameskip-v4"
 env    = make_atari(env_id)
 env    = wrap_deepmind(env)
 env    = wrap_pytorch(env)
